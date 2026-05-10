@@ -30,7 +30,7 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap: 16px;
   padding: 18px 5px;
@@ -106,8 +106,8 @@ button:hover {
     padding: 14px 30px;
     height: auto;
     display: flex;
-    justify-content: space-between;
-    gap: 0;
+    justify-content: space-around;
+    gap: 140px;
   }
 
   .nav-toggle {
