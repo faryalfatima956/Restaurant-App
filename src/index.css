@@ -90,7 +90,29 @@ button:hover {
 .navbar-scrolled {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+  }
 
+  .navbar > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .nav-links {
+    font-size: 0.78rem;
+    padding: 4px 8px;
+  }
+
+  .button{
+    font-size: 0.78rem;
+    padding: 4px 10px;
+  }
+}
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
