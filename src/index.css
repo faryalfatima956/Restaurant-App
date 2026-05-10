@@ -34,7 +34,7 @@ body {
   padding: 18px 20px;
   background: var(--gold-light);
   color: white;
-  height: 70px;
+  height: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +42,6 @@ body {
   z-index: 1000;
   transition: box-shadow 0.3s ease, background 0.3s ease;
   animation: slideDown 0.8s ease;
-  height:30px;
 }
 
 button {
@@ -72,8 +71,63 @@ button:hover {
   transition: color 0.3s ease;
 }
 
+.nav-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: var(--dark);
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .navbar-scrolled {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 14px 18px;
+    height: auto;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar a {
+    display: block;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .logo {
