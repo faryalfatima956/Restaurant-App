@@ -7,22 +7,27 @@ export default function Navbar() {
   const linkClass = ({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'
   const reserveClass = ({ isActive }) => isActive ? 'btn active-link' : 'btn'
 
+  const handleLinkClick = () => {
+    setMenuOpen(false)
+  }
+
   return (
     <nav className="navbar">
       <div className="logo">🍽️ Foodies</div>
       <button
         className="nav-toggle"
-        onClick={() => setMenuOpen((open) => !open)}
+        onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle navigation"
+        type="button"
       >
         ☰
       </button>
       <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        <NavLink onClick={() => setMenuOpen(false)} to="/" className={linkClass}>Home</NavLink>
-        <NavLink onClick={() => setMenuOpen(false)} to="/menu" className={linkClass}>Menu</NavLink>
-        <NavLink onClick={() => setMenuOpen(false)} to="/about" className={linkClass}>About</NavLink>
-        <NavLink onClick={() => setMenuOpen(false)} to="/contact" className={linkClass}>Contact</NavLink>
-        <NavLink onClick={() => setMenuOpen(false)} to="/reservation" className={reserveClass}>Reserve</NavLink>
+        <NavLink to="/" className={linkClass} onClick={handleLinkClick}>Home</NavLink>
+        <NavLink to="/menu" className={linkClass} onClick={handleLinkClick}>Menu</NavLink>
+        <NavLink to="/about" className={linkClass} onClick={handleLinkClick}>About</NavLink>
+        <NavLink to="/contact" className={linkClass} onClick={handleLinkClick}>Contact</NavLink>
+        <NavLink to="/reservation" className={reserveClass} onClick={handleLinkClick}>Reserve</NavLink>
       </div>
     </nav>
   )

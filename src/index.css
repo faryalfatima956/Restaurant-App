@@ -41,7 +41,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 999;
   transition: box-shadow 0.3s ease, background 0.3s ease;
   animation: slideDown 0.8s ease;
 }
@@ -88,6 +88,7 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 12px;
+  pointer-events: auto;
 }
 
 .navbar-scrolled {
@@ -95,25 +96,29 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
   .navbar {
-    position: relative;
     flex-wrap: wrap;
     align-items: center;
     padding: 14px 30px;
     height: auto;
-    display:flex;
-    justify-content:space-around;
-    gap:140px;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
   }
 
   .nav-toggle {
     display: block;
+    z-index: 1000;
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
-    right: -200px;
+    position: fixed;
+    top: 70px;
+    right: 0;
     width: 200px;
     background: var(--gold-light);
     border-radius: 8px;
@@ -121,24 +126,34 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transition: right 0.3s ease;
-    z-index: 1001;
+    transition: transform 0.3s ease;
+    z-index: 998;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    pointer-events: auto;
+    pointer-events: none;
+    transform: translateX(250px);
   }
 
   .nav-links.open {
-    right: 0;
+    transform: translateX(0);
+    pointer-events: auto;
   }
 
   .navbar a {
     display: block;
     margin: 0;
+    padding: 10px 8px;
     font-size: 18px;
     color: var(--dark);
+    pointer-events: auto;
   }
 
   .navbar a:hover {
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 4px;
+  }
+
+  .navbar a:active {
     background: var(--orange);
     color: var(--white);
   }
@@ -146,6 +161,11 @@ button:hover {
   .btn {
     width: 100%;
     text-align: center;
+    padding: 12px 8px;
+  }
+
+  .btn:hover {
+    background: var(--orange) !important;
   }
 }
 
