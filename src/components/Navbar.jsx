@@ -15,7 +15,7 @@ export default function Navbar() {
         onClick={() => setMenuOpen((open) => !open)}
         aria-label="Toggle navigation"
       >
-        ⋯
+        ☰
       </button>
       <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
         <NavLink onClick={() => setMenuOpen(false)} to="/" className={linkClass}>Home</NavLink>
