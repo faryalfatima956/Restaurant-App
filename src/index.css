@@ -103,7 +103,7 @@ button:hover {
   .navbar {
     flex-wrap: wrap;
     align-items: center;
-    padding: 14px 30px;
+    padding: 14px 10px;
     height: auto;
     display: flex;
     justify-content: space-around;
